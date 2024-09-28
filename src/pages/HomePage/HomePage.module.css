@@ -1,0 +1,59 @@
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainBlock {
+  width: 1100px;
+  height: 700px;
+  background-image: url('../../../public/home.jpg');
+  object-fit: cover;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mainBlock::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1100px;
+  height: 700px;
+  text-align: center;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.35); /* чорний колір з прозорістю 50% */
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.title {
+  font-size: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  color: whitesmoke;
+  z-index: 2;
+}
+
+.link {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 800;
+  padding: 15px 25px;
+  border: 2px solid #dbfffc;
+  color: #dbfffc;
+  z-index: 2;
+  transition: var(--animation);
+}
+
+.link:hover {
+  background-color: #dbfffc;
+  color: black;
+}

@@ -1,3 +1,7 @@
+:root {
+  --animation: 125ms ease-in;
+}
+
 body {
   background-color: #000;
   /* background-image: url('./assets/background.png'); */
@@ -7,7 +11,13 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: #111111;
+  background-image: linear-gradient(
+    to top,
+    #bdc2e8 0%,
+    #bdc2e8 1%,
+    #e6dee9 100%
+  );
+  background-blend-mode: screen;
   width: 100%;
   height: 100vh;
   margin: 0;
