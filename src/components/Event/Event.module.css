@@ -1,0 +1,43 @@
+.container {
+  margin-top: 100px;
+  height: calc(100vh - 100px);
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: wheat;
+  margin-bottom: 8px;
+}
+
+.locWrapper {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.location {
+  font-size: 18px;
+  font-weight: 600;
+  color: whitesmoke;
+  margin-bottom: 16px;
+}
+
+.text {
+  font-size: 16px;
+  color: whitesmoke;
+}
+
+.backLink {
+  display: flex;
+  gap: 8px;
+  color: darkgray;
+  margin-bottom: 20px;
+  transition: var(--animation);
+}
+
+.backLink:hover {
+  color: rgb(247, 203, 123);
+}

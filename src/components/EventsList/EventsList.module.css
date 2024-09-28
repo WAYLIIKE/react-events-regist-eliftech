@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.scrollWrapper {
+  height: 660px;
+  width: 100%;
+  padding: 30px;
+  border-radius: 30px;
+  -webkit-box-shadow: 2px 15px 100px -14px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 2px 15px 100px -14px rgba(66, 68, 90, 1);
+  box-shadow: 2px 15px 100px -14px rgba(66, 68, 90, 1);
+}
+
+.list {
+  max-height: calc(100% - 70px);
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.title {
+  font-size: 34px;
+  color: whitesmoke;
+  letter-spacing: 0.07em;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  height: 40px;
+}

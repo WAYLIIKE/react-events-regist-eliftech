@@ -1,0 +1,58 @@
+.item {
+  /* background-color: rgb(26, 43, 102); */
+  border: 2px solid rgb(196, 196, 196);
+  padding: 20px;
+  margin: 10px;
+  border-radius: 20px;
+  transition: var(--animation);
+}
+
+.item:hover {
+  cursor: pointer;
+  scale: 101%;
+}
+
+.title {
+  font-size: 24px;
+  color: rgb(247, 203, 123);
+  letter-spacing: 0.05em;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.locWrapper {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.location {
+  font-size: 18px;
+  font-weight: 600;
+  color: whitesmoke;
+}
+
+.description {
+  color: rgb(209, 208, 208);
+  margin-bottom: 15px;
+}
+
+.link {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: whitesmoke;
+  transition: var(--animation);
+}
+
+.link:not(:last-child) {
+  margin-right: 24px;
+}
+
+.link:hover {
+  color: black;
+}

@@ -1,7 +1,13 @@
+import { Container } from '../../components/Container/Container';
+
 // import css from './ErrorPage.module.css';
 
 const ErrorPage = () => {
-  return <div></div>;
+  return (
+    <div>
+      <Container></Container>
+    </div>
+  );
 };
 
 export default ErrorPage;

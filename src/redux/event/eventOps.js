@@ -17,3 +17,32 @@ export const fetchEvents = createAsyncThunk(
     }
   }
 );
+
+export const fetchEventInfo = createAsyncThunk(
+  'event/fetchEventInfo',
+  async (eventId, thunkAPI) => {
+    try {
+      const response = await axiosInstance.get(`events/${eventId}`);
+
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error);
+    }
+  }
+);
+
+export const addParticipant = createAsyncThunk(
+  'event/addParticipant',
+  async (participant, thunkAPI) => {
+    try {
+      const response = await axiosInstance.post(
+        `participants/add`,
+        participant
+      );
+
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error);
+    }
+  }
+);
