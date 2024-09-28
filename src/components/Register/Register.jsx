@@ -22,6 +22,7 @@ export const Register = ({ eventId }) => {
   const dispatch = useDispatch();
 
   const {
+    reset,
     register,
     handleSubmit,
     formState: { errors },
@@ -33,6 +34,7 @@ export const Register = ({ eventId }) => {
     const reqData = { ...data, event: eventId };
     console.log(reqData);
     dispatch(addParticipant(reqData));
+    reset();
   };
 
   return (

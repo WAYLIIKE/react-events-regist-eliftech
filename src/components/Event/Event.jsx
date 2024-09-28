@@ -1,29 +1,33 @@
 import { useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
-import { fetchEventInfo } from '../../redux/event/eventOps';
+import { fetchEventInfo, getParticipants } from '../../redux/event/eventOps';
 import { IoLocationOutline } from 'react-icons/io5';
 import { IoReturnUpBackOutline } from 'react-icons/io5';
 
 import css from './Event.module.css';
 import { NavLink } from 'react-router-dom';
+import { ParticipantsListItem } from '../ParticipantsListItem/ParticipantsListItem';
 
 export const Event = ({ eventId }) => {
   const dispatch = useDispatch();
   const [event, setEvent] = useState({});
+  const [participants, setParticipants] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const res = await dispatch(fetchEventInfo(eventId));
+        const resPar = await dispatch(getParticipants(eventId));
 
         setEvent(res.payload);
+        setParticipants(resPar.payload);
       } catch (error) {
         console.error('Error fetching event info:', error);
       }
     };
 
     fetchData();
-  }, [dispatch, eventId, setEvent]);
+  }, [dispatch, eventId, setEvent, setParticipants]);
 
   return (
     <div className={css.container}>
@@ -37,6 +41,14 @@ export const Event = ({ eventId }) => {
         <p className={css.location}>{event.location}</p>
       </div>
       <p className={css.text}>{event.description}</p>
+      <div className={css.scrollWrapper}>
+        <h2 className={css.subTitle}>{`${event.name} participants`}</h2>
+        <ul className={css.list}>
+          {participants.map((participant, idx) => (
+            <ParticipantsListItem key={idx} participant={participant} />
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

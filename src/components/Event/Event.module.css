@@ -28,6 +28,7 @@
 .text {
   font-size: 16px;
   color: whitesmoke;
+  margin-bottom: 30px;
 }
 
 .backLink {
@@ -40,4 +41,32 @@
 
 .backLink:hover {
   color: rgb(247, 203, 123);
+}
+
+.scrollWrapper {
+  padding: 30px;
+  border-radius: 30px;
+  -webkit-box-shadow: 2px 15px 100px -14px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 2px 15px 100px -14px rgba(66, 68, 90, 1);
+  box-shadow: 2px 15px 100px -14px rgba(66, 68, 90, 1);
+}
+
+.list {
+  height: 450px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex-basis: calc((100% - 15px) / 2);
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.subTitle {
+  margin-bottom: 20px;
+  font-size: 21px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: whitesmoke;
 }

@@ -46,3 +46,16 @@ export const addParticipant = createAsyncThunk(
     }
   }
 );
+
+export const getParticipants = createAsyncThunk(
+  'event/getParticipants',
+  async (eventId, thunkAPI) => {
+    try {
+      const response = await axiosInstance.get(`participants/${eventId}`);
+
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error);
+    }
+  }
+);
