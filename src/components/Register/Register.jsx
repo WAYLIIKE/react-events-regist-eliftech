@@ -1,13 +1,15 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Container } from '../../components/Container/Container';
 import { IoReturnUpBackOutline } from 'react-icons/io5';
-
-import css from './Register.module.css';
 import { NavLink } from 'react-router-dom';
 import { addParticipant } from '../../redux/event/eventOps';
+import { selectLoading } from '../../redux/selectors';
+import * as yup from 'yup';
+
+import css from './Register.module.css';
+import { Skeleton } from '@mui/material';
 
 const schema = yup
   .object({
@@ -18,8 +20,9 @@ const schema = yup
   })
   .required();
 
-export const Register = ({ eventId }) => {
+export const Register = ({ eventId, event }) => {
   const dispatch = useDispatch();
+  const isLoading = useSelector(selectLoading);
 
   const {
     reset,
@@ -44,7 +47,17 @@ export const Register = ({ eventId }) => {
           <IoReturnUpBackOutline />
           <p>back to all events</p>
         </NavLink>
-        <h1 className={css.header}>Event registration</h1>
+        {isLoading ? (
+          <Skeleton
+            variant="rounded"
+            width={374}
+            height={30}
+            sx={{ marginBottom: '10px' }}
+          />
+        ) : (
+          <h1 className={css.title}>{event.name}</h1>
+        )}
+        <h2 className={css.header}>Event registration</h2>
         <p className={css.text}>
           Thank you for your interest in our platform! In order to register, we
           need some information. Please provide us with the following
