@@ -7,7 +7,6 @@
 }
 
 .item:hover {
-  cursor: pointer;
   scale: 101%;
 }
 

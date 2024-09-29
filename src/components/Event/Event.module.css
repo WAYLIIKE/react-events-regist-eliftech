@@ -55,11 +55,9 @@
   height: 450px;
   overflow-y: scroll;
   display: flex;
-  flex-direction: column;
-  gap: 15px;
-  flex-basis: calc((100% - 15px) / 2);
   flex-wrap: wrap;
   gap: 15px;
+  flex-basis: calc((100% - 15px) / 2);
 }
 
 .subTitle {
