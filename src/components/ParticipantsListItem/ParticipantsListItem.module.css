@@ -4,4 +4,31 @@
   padding: 20px;
   border-radius: 20px;
   width: 600px;
+  display: flex;
+  align-items: center;
+}
+
+.logoWrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: whitesmoke;
+  position: relative;
+  font-size: 18px;
+}
+
+.logoWord {
+  position: absolute;
+  font-size: 18px;
+  font-weight: 500;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
 }
