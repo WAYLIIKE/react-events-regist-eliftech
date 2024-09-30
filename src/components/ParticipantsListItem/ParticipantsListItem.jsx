@@ -7,7 +7,10 @@ export const ParticipantsListItem = ({ participant }) => {
         <div className={css.logo}>
           <p className={css.logoWord}>{participant.name[0]}</p>
         </div>
-        <p>{participant.name}</p>
+        <div className={css.infoWrapper}>
+          <p className={css.name}>{participant.name}</p>
+          <p className={css.email}>{participant.email}</p>
+        </div>
       </div>
     </li>
   );

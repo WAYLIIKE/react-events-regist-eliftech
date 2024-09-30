@@ -13,6 +13,13 @@ const eventSlice = createSlice({
     events: [],
     loading: false,
     error: false,
+    participants: [],
+    participantFilter: '',
+  },
+  reducers: {
+    changeFilter: (state, action) => {
+      state.participantFilter = action.payload;
+    },
   },
   extraReducers: (builder) =>
     builder
@@ -74,14 +81,17 @@ const eventSlice = createSlice({
         state.loading = true;
         state.error = false;
       })
-      .addCase(getParticipants.fulfilled, (state) => {
+      .addCase(getParticipants.fulfilled, (state, action) => {
         state.loading = false;
         state.error = false;
+        state.participants = action.payload;
       })
       .addCase(getParticipants.rejected, (state) => {
         state.loading = false;
         state.error = true;
       }),
 });
+
+export const { changeFilter } = eventSlice.actions;
 
 export const eventReducer = eventSlice.reducer;

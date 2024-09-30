@@ -21,7 +21,6 @@
   border-radius: 50%;
   background: whitesmoke;
   position: relative;
-  font-size: 18px;
 }
 
 .logoWord {
@@ -31,4 +30,19 @@
   top: 50%;
   right: 50%;
   transform: translate(50%, -50%);
+}
+
+.infoWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.name {
+  font-size: 16px;
+}
+
+.email {
+  font-size: 14px;
+  color: grey;
 }
