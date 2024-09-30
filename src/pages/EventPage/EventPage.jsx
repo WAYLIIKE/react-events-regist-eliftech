@@ -1,14 +1,19 @@
 import { useParams } from 'react-router-dom';
 import { Container } from '../../components/Container/Container';
 import { Event } from '../../components/Event/Event';
-import { useSelector } from 'react-redux';
-import { selectLoading } from '../../redux/selectors';
+import { useDispatch } from 'react-redux';
+import { setParticipants } from '../../redux/event/eventSlice';
+import { useEffect } from 'react';
 
 // import css from './EventPage.module.css';
 
 const EventPage = () => {
   const { eventId } = useParams();
-  const isLoading = useSelector(selectLoading);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setParticipants());
+  }, [dispatch]);
 
   return (
     <div>

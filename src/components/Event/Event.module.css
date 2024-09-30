@@ -1,6 +1,6 @@
 .container {
-  margin-top: 100px;
-  height: calc(100vh - 100px);
+  margin-top: 70px;
+  height: calc(100vh - 70px);
 }
 
 .title {
@@ -28,7 +28,6 @@
 .text {
   font-size: 16px;
   color: whitesmoke;
-  margin-bottom: 30px;
 }
 
 .backLink {
@@ -67,15 +66,17 @@
   text-transform: uppercase;
   letter-spacing: 0.07em;
   color: whitesmoke;
+  height: 25px;
 }
 
 .input {
   margin-bottom: 20px;
-  height: 30px;
+  height: 37px;
   width: 300px;
   background: transparent;
   border: none;
   border-bottom: 1px solid whitesmoke;
+  padding: 0;
   padding-left: 8px;
   color: whitesmoke;
   font-size: 16px;
@@ -84,4 +85,45 @@
 .input::placeholder {
   color: whitesmoke;
   font-size: 16px;
+}
+
+.mainWrapper {
+  margin-bottom: 30px;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  height: 450px;
+  align-items: center;
+}
+
+.emptyContent {
+  font-size: 23px;
+  font-weight: 600;
+  color: whitesmoke;
+  letter-spacing: 0.15em;
+  margin-top: 70px;
+  margin-bottom: 40px;
+}
+
+.emptyText {
+  font-size: 12px;
+  font-weight: 800;
+  color: whitesmoke;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.link {
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: wheat;
+  transition: var(--animation);
+}
+
+.link:hover {
+  color: black;
 }
