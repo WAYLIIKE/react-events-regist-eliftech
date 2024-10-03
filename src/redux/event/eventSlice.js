@@ -32,7 +32,7 @@ const eventSlice = createSlice({
       })
       .addCase(fetchEvents.fulfilled, (state, action) => {
         state.loading = false;
-        state.events = action.payload;
+        state.events = action.payload.events;
       })
       .addCase(fetchEvents.rejected, (state) => {
         state.loading = false;

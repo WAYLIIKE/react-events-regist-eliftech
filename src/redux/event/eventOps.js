@@ -7,9 +7,11 @@ const axiosInstance = axios.create({
 
 export const fetchEvents = createAsyncThunk(
   'event/fetchEvents',
-  async (_, thunkAPI) => {
+  async (obj, thunkAPI) => {
     try {
-      const response = await axiosInstance.get('/events');
+      const response = await axiosInstance.get(
+        `/events?page=${obj.page}&limit=${obj.limit}`
+      );
 
       return response.data;
     } catch (error) {

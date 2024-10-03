@@ -4,6 +4,7 @@ export const selectEvents = (state) => state.event.events;
 export const selectLoading = (state) => state.event.loading;
 export const selectParticipants = (state) => state.event.participants;
 export const selectFilter = (state) => state.event.participantFilter;
+export const selectTotalPages = (state) => state.event.totalPages;
 
 export const selectFilteredParticipants = createSelector(
   [selectParticipants, selectFilter],

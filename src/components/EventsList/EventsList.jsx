@@ -1,12 +1,21 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { EventListItem } from '../EventListItem/EventListItem';
-import { selectLoading } from '../../redux/selectors';
+import { selectEvents, selectLoading } from '../../redux/selectors';
 import { Skeleton } from '@mui/material';
 
 import css from './EventsList.module.css';
+import { useEffect } from 'react';
+import { fetchEvents } from '../../redux/event/eventOps';
 
-export const EventList = ({ events }) => {
+export const EventList = () => {
   const isLoading = useSelector(selectLoading);
+
+  const dispatch = useDispatch();
+  const events = useSelector(selectEvents);
+
+  useEffect(() => {
+    dispatch(fetchEvents({ page: 1, limit: 10 }));
+  }, [dispatch]);
 
   return (
     <div className={css.container}>
