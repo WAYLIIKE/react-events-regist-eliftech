@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { EventListItem } from '../EventListItem/EventListItem';
 import { selectEvents, selectLoading } from '../../redux/selectors';
 import { Skeleton } from '@mui/material';
+import { IoIosSettings } from 'react-icons/io';
 
 import css from './EventsList.module.css';
 import { useEffect } from 'react';
@@ -20,7 +21,10 @@ export const EventList = () => {
   return (
     <div className={css.container}>
       <div className={css.scrollWrapper}>
-        <h1 className={css.title}>All upcoming events</h1>
+        <div className={css.titleWrapper}>
+          <h1 className={css.title}>All upcoming events</h1>
+          <IoIosSettings size={24} className={css.icon} />
+        </div>
         {isLoading ? (
           Array.from({ length: 3 }).map((_, index) => (
             <Skeleton

@@ -26,7 +26,22 @@
   font-size: 34px;
   color: whitesmoke;
   letter-spacing: 0.07em;
-  margin-left: 10px;
-  margin-bottom: 20px;
   height: 40px;
+}
+
+.titleWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+}
+
+.icon {
+  color: whitesmoke;
+  transition: var(--animation);
+}
+
+.icon:hover {
+  color: #000;
+  cursor: pointer;
 }
